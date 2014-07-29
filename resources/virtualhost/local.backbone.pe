@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+    ServerName local.backbone.pe
+	DocumentRoot /var/www/jan/recordando-backbone/public/
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride All
+	</Directory>
+	<Directory /var/www/jan/recordando-backbone/public/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride All
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error-backbone.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access-backbone.log combined
+</VirtualHost>
