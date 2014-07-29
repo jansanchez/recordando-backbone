@@ -1,0 +1,29 @@
+{
+  "name": "recordando-backbone",
+  "version": "0.0.1",
+  "description": "Proyecto para recordar las buenas caracteristicas de Backbone Js",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jansanchez/recordando-backbone"
+  },
+  "keywords": [
+    "backbone",
+    "javascript"
+  ],
+  "author": "Jan Sanchez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jansanchez/recordando-backbone/issues"
+  },
+  "homepage": "https://github.com/jansanchez/recordando-backbone",
+  "devDependencies": {
+    "gulp": "^3.8.6",
+    "gulp-coffee": "^2.1.1",
+    "gulp-jade": "^0.7.0",
+    "gulp-util": "^3.0.0"
+  }
+}
