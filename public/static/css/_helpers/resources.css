@@ -1,0 +1,143 @@
+/**
+* Resources
+* @module resources
+*/
+.tar {
+  text-align: right;
+}
+.tal {
+  text-align: left;
+}
+.tac {
+  text-align: center;
+}
+.mb0 {
+  margin-bottom: 0 !important;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.mt10 {
+  margin-top: 10px !important;
+}
+.mt20 {
+  margin-top: 20px !important;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.mt100 {
+  margin-top: 100px;
+}
+.mt1000 {
+  margin-top: 1000px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.mr0 {
+  margin-right: 0;
+}
+.relative {
+  position: relative;
+}
+.fs20 {
+  font-size: 20px;
+}
+.fs24 {
+  font-size: 24px;
+}
+.fleft {
+  float: left;
+}
+.fright {
+  float: right;
+}
+.hide {
+  display: none;
+}
+.cb {
+  clear: both;
+}
+.top60 {
+  top: 60px !important;
+}
+.top160 {
+  top: 160px !important;
+}
+.block {
+  display: block;
+}
+.inline_block {
+  display: inline-block;
+}
+.lh2em {
+  line-height: 2em;
+}
+.lh0 {
+  line-height: 0;
+}
+.banner_offers a {
+  display: block;
+  padding: 1em 0;
+  text-align: center;
+}
+.bold {
+  font-family: $family2;
+  transition: 0.3s all ease-in;
+}
+.box_info {
+  background: #fcf8e3;
+  border: 2px solid #ebdfc8;
+  color: #c09853;
+  font-family: $family1;
+  font-size: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  position: relative;
+  border-radius: 4px;
+}
+.box_info.error {
+  background: #f2dede;
+  border: 2px solid #eed3d7;
+  color: #b94a48;
+}
+.loader {
+  background: url("$imgPathopacity.png?version") repeat;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.loader.fix {
+  background: #fff;
+}
+.loader span {
+  background: url("$imgPathloader.gif?version") no-repeat;
+  display: block;
+  height: 24px;
+  left: 50%;
+  margin: -12px 0 0 -12px;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+}

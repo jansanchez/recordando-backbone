@@ -10,7 +10,7 @@ var path = {
         src: {
             jade: ['./frontend/jade/**/*.jade'],
             coffee: ['./frontend/coffee/**/*.coffee', '!./frontend/coffee/**/_*.coffee'],
-            stylus: ['./frontend/stylus/**/*.styl', '!./frontend/stylus/_**/*.styl', '!./frontend/stylus/**/_**/*.styl'],
+            stylus: ['./frontend/stylus/**/*.styl', '!./frontend/stylus/_**/', '!./frontend/stylus/**/_*.styl'],
             lint: ['!./public/static/js/libs/', './public/static/js/*.js']
         },
         dest: {

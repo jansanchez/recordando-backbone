@@ -1,0 +1,200 @@
+/**
+* Layout
+* @module layout
+* @class footer
+*/
+.scroll_pagination {
+  padding: 1em;
+  text-align: center;
+  background: $grey10;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  -webkit-box-shadow: 0 1px 6px 1px $grey40;
+  box-shadow: 0 1px 6px 1px $grey40;
+}
+.scroll_pagination li {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+.scroll_pagination a,
+.scroll_pagination span {
+  background: $grey70;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 0 2px;
+}
+.scroll_pagination a:hover,
+.scroll_pagination span:hover,
+.scroll_pagination a.active,
+.scroll_pagination span.active {
+  background: $brandPrimary;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+.scroll_pagination .disabled {
+  background: $grey20;
+  color: $grey10;
+  pointer-events: none;
+}
+.scroll_pagination .active span {
+  background: $brandPrimary;
+  transition: all 0.3s ease;
+}
+footer {
+  background: $grey80 url("$imgPathbg_footer.jpg?version") repeat-x center top;
+  color: #fff;
+  margin-top: 80px;
+  padding-top: 70px;
+  position: relative;
+}
+footer p {
+  font-size: 0.786em;
+  margin: 0.5em 0;
+}
+footer .logo_footer {
+  background: url("$imgPathlogo_ofertop.png?version");
+  width: 120px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -50px;
+}
+footer .col_footer.contact p,
+footer .col_footer.contact span {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  vertical-align: middle;
+}
+footer .col_footer.contact p {
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.429em;
+}
+footer .col_footer.contact span {
+  margin-right: 1em;
+}
+footer .col_footer.contact a {
+  display: block;
+  line-height: 1.5em;
+}
+footer h3 {
+  font-size: 1.143em;
+  margin-bottom: 0.857em;
+}
+footer a {
+  color: #fff;
+  font-size: 0.929em;
+  line-height: 1em;
+}
+footer a:hover {
+  border-bottom: 1px dashed #fff;
+  color: #fff;
+}
+footer ul {
+  line-height: 1em;
+}
+footer ul li {
+  padding: 0.357em 0;
+  font-size: 0.929em;
+}
+footer ul.check {
+  padding-left: 2em;
+}
+footer ul.check li:before {
+  position: absolute;
+  margin-left: -1.6em;
+  font-weight: bold;
+  content: "\2713";
+  color: #fff;
+}
+footer .fb {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  margin-right: 1.7em;
+  margin-left: 0.571em;
+}
+footer .twitter {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  margin-right: 1.2em;
+}
+footer .schedule {
+  *display: inline;
+  *zoom: 1;
+  display: inline-block;
+  margin-right: 1.7em;
+  vertical-align: middle;
+}
+footer .payment_methods {
+  text-align: center;
+  position: relative;
+  margin-bottom: 1em;
+mobile()
+}
+footer .payment_methods span {
+  font-size: 1.143em;
+}
+footer .payment {
+  *display: inline;
+  *zoom: 1;
+  display: inline-block;
+  margin-left: 1em;
+  vertical-align: middle;
+}
+footer .payment:hover {
+  border-bottom: none;
+}
+footer .payment.afiliate {
+  position: absolute;
+  right: 0;
+}
+.see_also {
+  background: #fff;
+  font-family: Arial, sans-serif;
+  padding: 4px 0 10px;
+mobile()
+}
+.see_also span {
+  color: #666;
+  float: left;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 0 0 56px;
+}
+.see_also ul {
+  float: right;
+  width: 791px;
+  list-style: none;
+  margin: 0;
+}
+.see_also li {
+  border-left: 1px solid #5f8526;
+  float: left;
+  font-size: 11px;
+  line-height: 12px;
+  margin-top: 6px;
+  padding: 0 5px;
+}
+.see_also li:first-child {
+  border: none;
+}
+.see_also a {
+  text-decoration: underline;
+  color: $linkActive;
+}
+.see_also a:hover {
+  color: $grey70;
+}
