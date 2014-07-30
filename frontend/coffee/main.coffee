@@ -28,3 +28,4 @@ require(['jquery', 'underscore', 'backbone', 'text'], ($, _, Backbone, text) ->
 			new GalleryView({})
 	)
 )
+
