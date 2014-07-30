@@ -22,8 +22,8 @@ var path = {
 		}
 	};
 
-gulp.task('default', ['jade', 'coffee', '', 'lint', 'stylus'], function() {
-	console.log('aqui se deben ejecutar todas las tareas de gulp');
+gulp.task('default', ['jade', 'coffee', 'lint', 'complexity', 'stylus'], function() {
+	console.log('aquí se deben ejecutar todas las tareas de gulp');
 });
 
 gulp.task('jade', function() {
