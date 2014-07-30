@@ -1,0 +1,60 @@
+/**
+* Buttons
+* @module buttons
+*/
+
+.btn
+	*display inline
+	*zoom 1
+	background $brandPrimary
+	border none
+	border-radius 3px
+	color #FFF
+	cursor pointer
+	display inline-block
+	font 1.143em/1.143em $family1
+	outline none
+	padding 8px 20px
+	vertical-align middle
+	transition color,background 0.3s ease-in
+	&:hover
+		background $brandPrimaryHover
+		color #fff
+		text-decoration none
+		transition all 0.3s ease-out
+	&.disabled
+		background #999 !important
+		border #eee !important
+		color #eee !important
+		cursor default
+		pointer-events none
+		&:hover
+			background #ddd
+			border #eee
+	& + .btn 
+		margin-left 8px
+.btn_mini
+	padding 6px 12px
+.btn_small
+	font-size 1em
+	height 1.714em
+	line-height 1.7em
+	padding 0 8px
+.btn_medium
+	font-size 1.714em
+	height 40px
+	line-height 40px
+	padding 0 2em
+.btn_large
+	padding 0.5em
+	font-family $family2
+	border-radius 6px 
+	
+.btn_black
+	background $grey70
+	&:hover
+		background $grey80
+.btn_grey
+	background $grey60
+	&:hover
+		background $grey70

@@ -1,0 +1,833 @@
+/**
+* Plugins
+* @module plugins
+*/
+
+/****************************************** Fancybox */
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-outer,
+.fancybox-inner,
+.fancybox-image,
+.fancybox-wrap iframe,
+.fancybox-wrap object,
+.fancybox-nav,
+.fancybox-nav span,
+.fancybox-tmp
+	padding 0
+	margin 0
+	border 0
+	outline none
+	vertical-align top
+
+.fancybox-wrap
+	position absolute
+	top 0
+	left 0
+	z-index 8020
+
+.fancybox-skin
+	position relative
+	background #fff
+	color #444
+	text-shadow none
+	-webkit-border-radius 4px
+	-moz-border-radius 4px
+	border-radius 4px
+
+.fancybox-opened
+	z-index 8030
+	.fancybox-title
+		visibility visible
+
+.fancybox-outer, .fancybox-inner
+	position relative
+
+.fancybox-inner
+	overflow hidden
+
+.fancybox-type-iframe
+	.fancybox-inner
+		-webkit-overflow-scrolling touch
+
+.fancybox-error
+	color #444
+	font 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif
+	margin 0
+	padding 15px
+	white-space nowrap
+
+.fancybox-image, .fancybox-iframe
+	display block
+	width 100%
+	height 100%
+
+.fancybox-image
+	max-width 100%
+	max-height 100%
+
+.fancybox-prev span, .fancybox-next span
+	background-image url($imgPath+'plugins/fancybox_sprite.png?version')
+
+#fancybox-loading
+	position fixed
+	top 50%
+	left 50%
+	margin-top -22px
+	margin-left -22px
+	opacity 0.8
+	cursor pointer
+	z-index 8060
+	background-color #fff
+	border-radius 50%
+	box-shadow 0 2px 6px rgba(0, 0, 0, 0.1)
+	-webkit-box-shadow 0 2px 6px rgba(0, 0, 0, 0.1)
+	-moz-box-shadow 0 1px 4px rgba(0, 0, 0, 0.1)
+	div
+		width 44px
+		height 44px
+		background url($imgPath+'loader.gif?version') center center no-repeat
+		background-size 24px 24px
+		border-radius 50%
+.fancybox-close
+	position absolute
+	sprite($ico_close)
+	cursor pointer
+	z-index 8040
+	top 15px
+	right 15px
+	&:hover 
+		opacity 0.7
+.fancybox-nav
+	position absolute
+	top 0
+	width 40%
+	height 100%
+	cursor pointer
+	text-decoration none
+	background transparent url($imgPath+'plugins/blank.gif?version')
+	-webkit-tap-highlight-color rgba(0,0,0,0)
+	z-index 8040
+	span
+		position absolute
+		top 50%
+		width 36px
+		height 34px
+		margin-top -18px
+		cursor pointer
+		z-index 8040
+		visibility hidden
+	&:hover
+		span
+			visibility visible
+
+.fancybox-prev
+	left 0
+	span
+		left 10px
+		background-position 0 -36px
+
+.fancybox-next
+	right 0
+	span
+		right 10px
+		background-position 0 -72px
+
+.fancybox-tmp
+	position absolute
+	top -99999px
+	left -99999px
+	visibility hidden
+	max-width 99999px
+	max-height 99999px
+	overflow visible !important
+
+.fancybox-lock
+	overflow hidden !important
+	width auto
+	body
+		overflow hidden !important
+	.fancybox-overlay
+		overflow auto
+		overflow-y scroll
+
+.fancybox-lock-test
+	overflow-y hidden !important
+
+.fancybox-overlay
+	position absolute
+	top 0
+	left 0
+	overflow hidden
+	display none
+	z-index 8010
+	background url($imgPath+'plugins/fancybox_overlay.png?version')
+
+.fancybox-overlay-fixed
+	position fixed
+	bottom 0
+	right 0
+
+.fancybox-title
+	visibility hidden
+	font normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif
+	position relative
+	text-shadow none
+	z-index 8050
+
+.fancybox-title-float-wrap
+	position absolute
+	bottom 0
+	right 50%
+	margin-bottom -35px
+	z-index 8050
+	text-align center
+	.child
+		display inline-block
+		margin-right -100%
+		padding 2px 20px
+		background transparent
+		background rgba(0, 0, 0, 0.8)
+		-webkit-border-radius 15px
+		-moz-border-radius 15px
+		border-radius 15px
+		text-shadow 0 1px 2px #222
+		color #FFF
+		font-weight bold
+		line-height 24px
+		white-space nowrap
+
+.fancybox-title-outside-wrap
+	position relative
+	margin-top 10px
+	color #fff
+
+.fancybox-title-inside-wrap
+	padding-top 10px
+
+.fancybox-title-over-wrap
+	position absolute
+	bottom 0
+	left 0
+	color #fff
+	padding 10px
+	background #000
+	background rgba(0, 0, 0, .8)
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
+	#fancybox-loading, .fancybox-prev span, .fancybox-next span
+		background-image url($imgPath+'plugins/fancybox_sprite@2x.png?version')
+		background-size 44px 152px
+		
+
+/******************************** Flexslider *********/
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus
+	outline none
+
+.slides,
+.flex-control-nav,
+.flex-direction-nav
+	margin 0
+	padding 0
+	list-style none
+
+.flexslider
+	margin 0
+	padding 0
+	margin 0 0 60px
+	background #fff
+	border 4px solid #fff
+	position relative
+	-webkit-border-radius 4px
+	-moz-border-radius 4px
+	-o-border-radius 4px
+	border-radius 4px
+	-webkit-box-shadow 0 1px 4px rgba(0,0,0,.2)
+	-moz-box-shadow 0 1px 4px rgba(0,0,0,.2)
+	-o-box-shadow 0 1px 4px rgba(0,0,0,.2)
+	box-shadow 0 1px 4px rgba(0,0,0,.2)
+	zoom 1
+	.slides
+		zoom 1
+		& > li
+			display none
+			-webkit-backface-visibility hidden
+		img
+			width 100%
+			display block
+	&:hover
+		.flex-prev
+			opacity 0.7
+			left 10px
+		.flex-next
+			opacity 0.7
+			right 10px
+
+.flex-pauseplay
+	span
+		text-transform capitalize
+	a
+		display block
+		width 20px
+		height 20px
+		position absolute
+		bottom 5px
+		left 10px
+		opacity 0.8
+		z-index 10
+		overflow hidden
+		cursor pointer
+		color #000
+		&:before
+			font-family $family1
+			font-size 20px
+			display inline-block
+			content '\f004'
+		&:hover
+			opacity 1
+		&.flex-play
+			&:before
+				content '\f003'
+
+.slides
+	&:after
+		content "\0020"
+		display block
+		clear both
+		visibility hidden
+		line-height 0
+		height 0
+
+html[xmlns]
+	.slides
+		display block
+
+*
+	html
+		.slides
+			height 1%
+
+.no-js
+	.slides
+		& > li
+			&:first-child
+				display block
+
+.flex-viewport
+	max-height 2000px
+	-webkit-transition all 1s ease
+	-moz-transition all 1s ease
+	-o-transition all 1s ease
+	transition all 1s ease
+
+.loading
+	.flex-viewport
+		max-height 300px
+
+.carousel
+	li
+		margin-right 5px
+
+.flex-direction-nav
+	a
+		text-decoration none
+		display block
+		width 40px
+		height 40px
+		margin -20px 0 0
+		position absolute
+		top 50%
+		z-index 10
+		overflow hidden
+		opacity 0
+		cursor pointer
+		color rgba(0,0,0,0.8)
+		text-shadow 1px 1px 0 rgba(255,255,255,0.3)
+		-webkit-transition all .3s ease
+		-moz-transition all .3s ease
+		transition all .3s ease
+		&:before
+			font-family $family1
+			font-size 40px
+			display inline-block
+			content '\f001'
+		&.flex-next
+			&:before
+				content '\f002'
+	.flex-prev
+		left -50px
+	.flex-next
+		right -50px
+		text-align right
+		opacity 1
+		right 10px
+	.flex-disabled
+		opacity 0!important
+		cursor default
+.flex-direction-nav
+	*height 0
+
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover
+	opacity 1
+
+.flex-control-nav
+	width 100%
+	position absolute
+	bottom -40px
+	text-align center
+	li
+		margin 0 6px
+		display inline-block
+		zoom 1
+		*display inline
+
+.flex-control-paging
+	li
+		a
+			width 11px
+			height 11px
+			display block
+			background #666
+			background rgba(0,0,0,0.5)
+			cursor pointer
+			text-indent -9999px
+			-webkit-border-radius 20px
+			-moz-border-radius 20px
+			-o-border-radius 20px
+			border-radius 20px
+			-webkit-box-shadow inset 0 0 3px rgba(0,0,0,0.3)
+			-moz-box-shadow inset 0 0 3px rgba(0,0,0,0.3)
+			-o-box-shadow inset 0 0 3px rgba(0,0,0,0.3)
+			box-shadow inset 0 0 3px rgba(0,0,0,0.3)
+			&:hover
+				background #333
+				background rgba(0,0,0,0.7)
+			&.flex-active
+				background #000
+				background rgba(0,0,0,0.9)
+				cursor default
+
+.flex-control-thumbs
+	margin 5px 0 0
+	position static
+	overflow hidden
+	li
+		width 25%
+		float left
+		margin 0
+	img
+		width 100%
+		display block
+		opacity .7
+		cursor pointer
+		&:hover
+			opacity 1
+	.flex-active
+		opacity 1
+		cursor default
+
+@media screen and (max-width: 860px)
+	.flex-direction-nav .flex-prev
+		opacity 1
+		left 10px
+	.flex-direction-nav .flex-next
+		opacity 1
+		right 10px
+
+@css {
+	@keyframes shake {
+
+		0% {
+			transform: translate(3px, 0);
+		}
+
+		50% {
+			transform: translate(-3px, 0);
+		}
+
+		100% {
+			transform: translate(0, 0);
+		}
+	}
+
+	@-moz-keyframes shake {
+
+		0% {
+			-moz-transform: translate(3px, 0);
+		}
+
+		50% {
+			-moz-transform: translate(-3px, 0);
+		}
+
+		100% {
+			-moz-transform: translate(0, 0);
+		}
+	}
+
+	@-webkit-keyframes shake {
+		0% {
+			-webkit-transform: translate(3px, 0);
+		}
+
+		50% {
+			-webkit-transform: translate(-3px, 0);
+		}
+
+		100% {
+			-webkit-transform: translate(0, 0);
+		}
+	}
+
+	.shake {
+		animation-name: shake;
+		animation-duration: 150ms;
+		animation-iteration-count: 2;
+		animation-timing-function: linear;
+		-moz-animation-name: shake;
+		-moz-animation-duration: 150ms;
+		-moz-animation-iteration-count: 2;
+		-moz-animation-timing-function: linear;
+		-webkit-animation-name: shake;
+		-webkit-animation-duration: 150ms;
+		-webkit-animation-iteration-count: 2;
+		-webkit-animation-timing-function: linear;
+	}
+}
+
+/********************* Parsley */
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success
+	color #468847 !important
+	background-color #DFF0D8 !important
+	border 1px solid #a7c79b !important
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error
+	color #B94A48 !important
+	background-color #F2DEDE !important
+	border 1px solid #EED3D7 !important
+	
+.parsley-error, .parsley-type, .parsley-required, .parsley-custom-error-message
+	animation-name shake
+	animation-duration 150ms
+	animation-iteration-count 2
+	animation-timing-function linear
+	-moz-animation-name shake
+	-moz-animation-duration 150ms
+	-moz-animation-iteration-count 2
+	-moz-animation-timing-function linear
+	-webkit-animation-name shake
+	-webkit-animation-duration 150ms
+	-webkit-animation-iteration-count 2
+	-webkit-animation-timing-function linear
+
+.custom_error
+	.parsley-errors-list
+		margin-bottom 1em 
+.parsley-errors-list
+	margin 2px 0 3px 0
+	padding 0
+	list-style-type none
+	font-size 0.9em
+	line-height 0.9em
+	opacity 0 
+	-moz-opacity 0 
+	-webkit-opacity 0 
+	transition all .3s ease-in !important
+	-o-transition all .3s ease-in !important
+	-ms-transition all .3s ease-in- !important
+	-moz-transition all .3s ease-in !important
+	-webkit-transition all .3s ease-in !important
+	&.filled
+		opacity 1
+	&:empty
+		margin 0
+	li 
+		font-size 11px
+		color #B94A4A
+
+/************ Slider */
+.slider
+	.slidesjs-container
+		z-index -999999
+		img
+			width 100%
+			height 418px
+	.slidesjs-previous
+	.slidesjs-next
+		display block
+		padding 0
+		position absolute
+		outline 0
+		top 50%
+		margin -20px 0 0 0
+		z-index 11
+		text-indent -9999px
+		opacity 0.3
+		transition all 0.3s ease-in
+		-webkit-transition opacity 0.3s ease-in
+		&:hover
+			opacity 1
+	.slidesjs-previous
+		left 15px
+		sprite($slides_prev)
+		
+	.slidesjs-next
+		right 15px
+		sprite($slides_next)
+		
+.navbar
+	overflow hidden
+	
+// bxSlider
+.bx-wrapper
+	position relative
+	margin 0 auto 60px
+	padding 0
+	*zoom 1
+	img
+		max-width 100%
+		display block
+	.bx-viewport
+		-webkit-transform translatez(0)
+		-moz-transform translatez(0)
+		-ms-transform translatez(0)
+		-o-transform translatez(0)
+		transform translatez(0)
+	.bx-loading
+		min-height 50px
+		background url($imgPath+'loader.gif?version') center center no-repeat $colorBg
+		height 100%
+		width 100%
+		position absolute
+		top 0
+		left 0
+		z-index 2000
+	.bx-pager
+		text-align center
+		font-size .85em
+		font-family Arial
+		font-weight bold
+		color #666
+		padding-top 20px
+		&.bx-default-pager
+			a
+				background #666
+				text-indent -9999px
+				display block
+				width 10px
+				height 10px
+				margin 0 5px
+				outline 0
+				-moz-border-radius 5px
+				-webkit-border-radius 5px
+				border-radius 5px
+	.bx-prev
+		left 10px
+		background url($imgPath+'plugins/glide-arrows.png?version') no-repeat 0 0
+	.bx-next
+		right 10px
+		background url($imgPath+'plugins/glide-arrows.png?version') no-repeat -17px 0
+	.bx-controls-direction
+		a
+			position absolute
+			top 50%
+			margin-top -9px
+			outline 0
+			width 18px
+			height 28px
+			text-indent -9999px
+			z-index 500
+			&.disabled
+				display none
+	.bx-controls-auto
+		text-align center
+		.bx-start
+			display block
+			text-indent -9999px
+			width 10px
+			height 11px
+			outline 0
+			background url(images/controls.png) -86px -11px no-repeat
+			margin 0 3px
+		.bx-stop
+			display block
+			text-indent -9999px
+			width 9px
+			height 11px
+			outline 0
+			background url(images/controls.png) -86px -44px no-repeat
+			margin 0 3px
+	.bx-controls
+		&.bx-has-controls-auto
+			&.bx-has-pager
+				.bx-pager
+					text-align left
+					width 80%
+				.bx-controls-auto
+					right 0
+					width 35px
+	.bx-caption
+		position absolute
+		bottom 0
+		left 0
+		background #666\9
+		background rgba(80, 80, 80, 0.75)
+		width 100%
+		span
+			color #fff
+			font-family Arial
+			display block
+			font-size .85em
+			padding 10px
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto
+	position absolute
+	bottom -30px
+	width 100%
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item
+	display inline-block
+	*zoom 1
+	*display inline
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active
+	background #000
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active
+	background-position -86px 0
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active
+	background-position -86px -33px
+
+
+/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 335px;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  visibility: hidden;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  visibility: visible;
+}
+.nano > .nano-pane {
+  background : url($imgPath+'scroll_bg.png?version') center top repeat-y;
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: $colorBorderBottom;
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+
+/*PERFECT SCROLL*/
+
+.ps-container
+	.ps-scrollbar-x-rail
+		position absolute
+		bottom 3px
+		height 8px
+		-webkit-border-radius 4px
+		-moz-border-radius 4px
+		border-radius 4px
+		opacity 0
+		-o-transition background-color .2s linear, opacity .2s linear
+		-webkit-transition background-color .2s linear, opacity .2s linear
+		-moz-transition background-color .2s linear, opacity .2s linear
+		transition background-color .2s linear, opacity .2s linear
+		&.in-scrolling
+			background-color #eee
+			opacity 0.9
+	.ps-scrollbar-y-rail
+		background #B39684
+		border-radius 4px
+		position absolute
+		right 3px
+		transition background-color .2s linear, opacity .2s linear
+		width 2px
+		-moz-border-radius 4px
+		-webkit-border-radius 4px
+		-o-transition background-color .2s linear, opacity .2s linear
+		-webkit-transition background-color .2s linear, opacity .2s linear
+		-moz-transition background-color .2s linear, opacity .2s linear
+		&.in-scrolling
+			background-color #eee
+			opacity 0.9
+	.ps-scrollbar-x
+		position absolute
+		bottom 0
+		height 8px
+		background-color #aaa
+		-webkit-border-radius 4px
+		-moz-border-radius 4px
+		border-radius 4px
+		-o-transition background-color .2s linear
+		-webkit-transition background-color.2s linear
+		-moz-transition background-color .2s linear
+		transition background-color .2s linear
+	&.ie6
+		.ps-scrollbar-x
+			font-size 0
+		.ps-scrollbar-y
+			font-size 0
+	.ps-scrollbar-y
+		position absolute
+		right -3px
+		width 10px
+		background-color #B39684
+		-webkit-border-radius 4px
+		-moz-border-radius 4px
+		border-radius 4px
+		-o-transition background-color .2s linear
+		-webkit-transition background-color.2s linear
+		-moz-transition background-color .2s linear
+		transition background-color .2s linear

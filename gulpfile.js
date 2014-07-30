@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     watch = require('gulp-watch'),
     jshint = require('gulp-jshint');
 
-gulp.task('default', ['jade', 'coffee', 'stylus'], function() {
+gulp.task('default', ['jade', 'coffee', 'lint', 'stylus'], function() {
 	console.log('aqui se deben ejecutar todas las tareas de gulp');
 });
 
@@ -25,13 +25,18 @@ gulp.task('coffee', function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src('!./public/static/js/libs/', './public/static/js/main.js')
+    gulp.src('!./public/static/js/libs/', './public/static/js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
 gulp.task('stylus', function () {
-    gulp.src('./frontend/stylus/**/*.styl')
+    gulp.src('./frontend/stylus/**/*.styl','!frontend/stylus/_**/')
     .pipe(stylus())
     .pipe(gulp.dest('./public/static/css/'));
+});
+
+gulp.task('watch', function () {
+  var js = ['coffee', 'lint'];
+  gulp.watch('./frontend/coffee/**/*.coffee', js);
 });

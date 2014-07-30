@@ -1,0 +1,197 @@
+/**
+* Forms
+* @module forms
+*/
+form {
+  width: 100%;
+  margin: 30px auto 0;
+  text-align: left;
+  font-size: 1em;
+}
+form.vertical label {
+  display: block;
+  float: none;
+  line-height: 1.3em;
+}
+form.vertical label.ioption {
+  float: left;
+  font-size: 1em;
+  margin-left: 70px;
+}
+form.vertical label.ioption:first-child {
+  margin: 0;
+}
+form.vertical label.ioption.ck {
+  padding-right: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+form.vertical input[type="text"],
+form.vertical input[type="email"],
+form.vertical input[type="tel"],
+form.vertical input[type="password"],
+form.vertical select {
+  width: 100%;
+}
+form.vertical textarea {
+  width: 100%;
+}
+form.vertical .btn {
+  margin: 0;
+}
+form.nolabel label {
+  display: none;
+}
+form.nolabel label.ioption {
+  display: block;
+  font-size: 1em;
+  line-height: 18px;
+  margin-left: 60px;
+  width: 80px;
+}
+form.nolabel label.ioption input[type="radio"] {
+  top: 4px;
+}
+form.nolabel label.ioption:first-child {
+  margin: 0;
+}
+form.nolabel label.ioption.ck {
+  padding-right: 20px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+form.nolabel input[type="text"],
+form.nolabel input[type="email"],
+form.nolabel input[type="tel"],
+form.nolabel input[type="password"],
+form.nolabel select {
+  width: 100%;
+}
+form.nolabel textarea {
+  width: 100%;
+}
+form.nolabel .btn {
+  margin: 0;
+}
+.form_control {
+  margin-bottom: 0.5em;
+  *zoom: 1;
+}
+.form_control .form_control_inline .form_control {
+  float: left;
+  margin-left: 1em;
+}
+.form_control .form_control_inline .form_control:first-child {
+  margin-left: 0 !important;
+}
+.form_control:before,
+.form_control:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.form_control:after {
+  clear: both;
+}
+.form_control label {
+  margin: 0;
+  float: left;
+  font-size: 1em;
+  line-height: 35px;
+  width: 12em;
+}
+.form_control label.nbsp:after {
+  content: "\00a0";
+}
+.form_control label.ioption {
+  cursor: pointer;
+  line-height: 35px;
+  padding-left: 20px;
+  position: relative;
+  width: 11em;
+}
+.form_control label.ioption input[type="radio"],
+.form_control label.ioption input[type="checkbox"] {
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 12px;
+}
+.form_control label.ioption.ck {
+  font-size: 0.929em;
+  line-height: 1.5em;
+  margin-left: 12.5em;
+  width: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.form_control label.ioption.ck input[type="checkbox"] {
+  top: 2px;
+}
+.form_control label .required {
+  color: $colorError;
+  font-size: 1.1em;
+}
+.form_control input[type="text"],
+.form_control input[type="email"],
+.form_control input[type="tel"],
+.form_control input[type="password"],
+.form_control select,
+.form_control textarea {
+  background-color: #fff;
+  border: 1px solid $grey40;
+  border-radius: 3px;
+  font: 1em/2em $family1;
+  height: 30px;
+  outline: none;
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 300px;
+}
+.form_control input[type="text"].error,
+.form_control input[type="email"].error,
+.form_control input[type="tel"].error,
+.form_control input[type="password"].error,
+.form_control select.error,
+.form_control textarea.error {
+  background-color: #fcdddd;
+  border: 1px solid #fc7d7d;
+}
+.form_control input[type="text"].disabled,
+.form_control input[type="email"].disabled,
+.form_control input[type="tel"].disabled,
+.form_control input[type="password"].disabled,
+.form_control select.disabled,
+.form_control textarea.disabled {
+  background: $grey10;
+  border: 1px solid #ddd;
+}
+.form_control textarea {
+  background-color: #fff;
+  border: 1px solid $grey40;
+  border-radius: 3px;
+  font: 1em/2em $family1;
+  height: 70px;
+  padding: 7px 10px;
+  width: 300px;
+}
+.form_control textarea.error {
+  background-color: #fcdddd;
+  border: 1px solid #fc7d7d;
+}
+.input_xlarge {
+  width: 500px !important;
+}
+.input_large {
+  width: 250px !important;
+}
+.input_medium {
+  width: 205px !important;
+}
+.input_small {
+  width: 100px !important;
+}
+.input_xsmall {
+  width: 80px !important;
+}
