@@ -3,15 +3,16 @@ define(['backbone', 'underscore'], function(Backbone, _) {
   galleryRow = Backbone.View.extend({
     model: null,
     collection: null,
+    tagName: "li",
     events: {
-      "dbclick input": "editAuthor"
+      "dbclick input": "editAuthor",
+      "click .remove": "deleteAuthor"
     },
     template: $('#tplAuthor').html(),
     initialize: function() {
       _.bindAll(this, 'render', 'deleteAuthor');
       this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'destroy', this.remove);
-      console.log('initializa Row');
     },
     render: function() {
       var compiled_template;

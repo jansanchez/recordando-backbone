@@ -9,6 +9,7 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow', 'models/
       this.collection = new Authors();
       this.collection.fetch();
       this.listenTo(this.collection, 'add', this.addAuthor);
+      this.listenTo(this.collection, 'remove', this.removeAuthor);
     },
     render: function() {
       console.log('render de MainView');
@@ -21,7 +22,7 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow', 'models/
       });
       this.$el.append(view.render().el);
     },
-    removeOne: function(modelo) {
+    removeAuthor: function(modelo) {
       modelo.destroy();
     }
   });

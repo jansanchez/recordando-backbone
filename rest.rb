@@ -14,10 +14,10 @@ end
 
 get '/authors' do
 	#content_type 'application/json'
-	json = {}
 	$i = 1
 	$total = 13
 	array = []
+	json = {}
 
 	begin
 		json[:"#$i"] = { :id => "#$i", :name => "name #$i", :photo => "#$i.jpg", :twitter => "@tuit#$i", :url => "https://www.google.com.pe/?q=#$i" }
@@ -28,5 +28,13 @@ get '/authors' do
 	array.to_json
 end
 
-# http://localhost:9494/img/1.jpg
 
+get '/authors/:id' do
+	array = []
+	json = {}
+
+	json = { :head => "ok" }
+	array.push(json)
+	
+	json.to_json
+end

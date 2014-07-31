@@ -14,13 +14,12 @@
       <ul class="authors js">
       </ul>
     </div>
-    <script id="tplAuthor" type="text/template">
-      <li><a href="{{url}}" title="{{name}}"><img src="http://localhost:9494/static/img/{{photo}}" alt="{{name}}"></a>
-        <div class="options">
-          <input type="text" value="{{name}}">
-        </div>
-        <div class="tooltip"><span class="name">{{name}}</span><span class="twitter">{{twitter}}</span><a href="{{url}}" title="{{name}}">{{url}}</a></div>
-      </li>
+    <script id="tplAuthor" type="text/template"><a href="{{url}}" title="{{name}}"><img border="0" src="http://localhost:9494/static/img/{{photo}}" alt="{{name}}"></a>
+      <div class="data">
+        <input type="text" placeholder="{{name}}" value="{{name}}">
+      </div>
+      <div class="options"><a href="javascript:;" title="Eliminar" class="remove"><img border="0" src="static/img/remove.png" alt="{{name}}"></a></div>
+      <div class="tooltip"><span class="name">{{name}}</span><span class="twitter">{{twitter}}</span><a href="{{url}}" title="{{name}}">{{url}}</a></div>
     </script>
     <script data-main="static/js/main" src="static/js/libs/requirejs/require.js" type="text/javascript"></script>
   </body>

@@ -16,6 +16,8 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 			this.collection.fetch()
 
 			this.listenTo(this.collection, 'add', this.addAuthor)
+
+			this.listenTo(this.collection, 'remove', this.removeAuthor)
 			
 			return
 		,
@@ -36,7 +38,7 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 			return
 		,
 		# Cuando hubo un "remove" en la colección ejecutamos esta función y recibimos como parametro el modelo afectado
-		removeOne : (modelo) ->
+		removeAuthor : (modelo) ->
 			# Destruimos el modelo
 			modelo.destroy()
 			return

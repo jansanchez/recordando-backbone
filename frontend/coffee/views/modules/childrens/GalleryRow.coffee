@@ -4,8 +4,10 @@ define(['backbone', 'underscore'], (Backbone, _) ->
 		# Creamos la vista hija "galleryRow" para cada autor
 		model : null,
 		collection: null,
+		tagName: "li",
 		events: {
-			"dbclick input" : "editAuthor"
+			"dbclick input" : "editAuthor",
+			"click .remove" : "deleteAuthor"
 		},
 		template : $('#tplAuthor').html(),
 		initialize: () ->
@@ -16,7 +18,6 @@ define(['backbone', 'underscore'], (Backbone, _) ->
 			# Nos podemos a escuchar desde la vista hija actual cuando ocurra un evento "destroy" en el modelo y lanzamos la función "remove" de la vista hija actual
 			this.listenTo(this.model, 'destroy', this.remove)
 
-			console.log('initializa Row')
 			return
 		,
 		render : () ->
