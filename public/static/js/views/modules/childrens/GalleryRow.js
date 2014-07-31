@@ -10,7 +10,7 @@ define(['backbone', 'underscore'], function(Backbone, _) {
     initialize: function() {
       _.bindAll(this, 'render', 'deleteAuthor');
       this.listenTo(this.model, 'change', this.render);
-      return this.listenTo(this.model, 'destroy', this.remove);
+      this.listenTo(this.model, 'destroy', this.remove);
     },
     render: function() {
       var compiled_template;
@@ -19,7 +19,7 @@ define(['backbone', 'underscore'], function(Backbone, _) {
       return this;
     },
     deleteAuthor: function() {
-      return this.collection.remove(this.model);
+      this.collection.remove(this.model);
     }
   });
   return galleryRow;

@@ -13,6 +13,8 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 			# Asignamos a la variable "collection" una instancia de nuestra Colección
 			this.collection = new Authors()
 
+			
+			this.collection.fetch()
 			# Desde la vista escuchamos cuando suceda el evento "add" en la colección y lanzamos la función addOne
 			#this.listenTo(this.collection, 'add', this.addOne)
 			# Desde la vista escuchamos cuando suceda el evento "remove" en la colección y lanzamos la función removeOne

@@ -7,13 +7,14 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow', 'models/
     initialize: function() {
       _.bindAll(this, 'render');
       this.collection = new Authors();
+      this.collection.fetch();
     },
     render: function() {
-      return console.log('render principal');
+      console.log('render principal');
     },
     addOne: function(modelo) {},
     removeOne: function(modelo) {
-      return modelo.destroy();
+      modelo.destroy();
     }
   });
   return GalleryView;

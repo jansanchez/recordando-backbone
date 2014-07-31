@@ -6,10 +6,15 @@ configure do
   set :port, 9494
 end
 
-get '/authors' do
-	content_type 'application/json'
-	json = {}
+before do
+	content_type :json
+	headers 'Access-Control-Allow-Origin' => '*', 
+			'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST', 'PUT', 'DELETE']
+end
 
+get '/authors' do
+	#content_type 'application/json'
+	json = {}
 	$i = 1
 	$total = 13
 
