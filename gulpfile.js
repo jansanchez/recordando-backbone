@@ -27,7 +27,7 @@ gulp.task('default', ['jade', 'coffee', 'lint', 'complexity', 'stylus'], functio
 });
 
 gulp.task('jade', function() {
-	gulp.src(path.src.jade)
+	return gulp.src(path.src.jade)
 		.pipe(jade({
 			pretty: true
 		}))
@@ -35,24 +35,24 @@ gulp.task('jade', function() {
 });
 
 gulp.task('coffee', function() {
-	gulp.src(path.src.coffee)
+	return gulp.src(path.src.coffee)
 		.pipe(coffee({bare: true}).on('error', gutil.log))
 		.pipe(gulp.dest(path.dest.coffee));
 });
 
 gulp.task('lint', function() {
-	gulp.src(path.src.lint)
+	return gulp.src(path.src.lint)
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
 
 gulp.task('complexity', function(){
-	gulp.src(path.src.complexity)
+	return gulp.src(path.src.complexity)
 		.pipe(complexity());
 });
 
 gulp.task('stylus', function () {
-	gulp.src(path.src.stylus)
+	return gulp.src(path.src.stylus)
 		.pipe(stylus())
 		.pipe(gulp.dest(path.dest.stylus));
 });

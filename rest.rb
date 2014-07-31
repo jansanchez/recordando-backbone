@@ -6,7 +6,7 @@ configure do
   set :port, 9494
 end
 
-get '/' do
+get '/authors' do
 	content_type 'application/json'
 	json = {}
 
@@ -14,7 +14,7 @@ get '/' do
 	$total = 13
 
 	begin
-		json[:"#$i"] = { :id => "#$i", :titulo => "titulo #$i", :imagen => "#$i.jpg", :twitter => "@tuit#$i", :url => "https://www.google.com.pe/?q=#$i" }
+		json[:"#$i"] = { :id => "#$i", :name => "name #$i", :photo => "#$i.jpg", :twitter => "@tuit#$i", :url => "https://www.google.com.pe/?q=#$i" }
 		$i +=1
 	end while $i < $total
 

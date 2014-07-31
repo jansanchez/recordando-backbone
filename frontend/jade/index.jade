@@ -9,16 +9,18 @@ html
 		.box_center
 			h1 Galería
 		.box_center
-			.authors.js
+			ul.authors.js
 				-//for indice in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-		script(type='text/template')
-			ul
-				li
-					a(href="http://local.backbone.pe", title="{{titulo}}")
-						img(src="http://localhost:9494/static/img/{{imagen}}", alt="{{titulo}}")
-					.tooltip
-						span.name {{titulo}}
-						span.twitter {{twitter}}
-						a(href="http://local.backbone.pe", title="{{url}}") {{url}}
+
+		script(id="tplAuthor", type='text/template')
+			li
+				a(href="{{url}}", title="{{name}}")
+					img(src="http://localhost:9494/static/img/{{photo}}", alt="{{name}}")
+				.options
+					input(type="text", value="{{name}}")
+				.tooltip
+					span.name {{name}}
+					span.twitter {{twitter}}
+					a(href="{{url}}", title="{{name}}") {{url}}
 
 		script(data-main="static/js/main", src="static/js/libs/requirejs/require.js", type="text/javascript")
