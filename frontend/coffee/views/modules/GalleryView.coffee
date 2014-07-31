@@ -12,29 +12,27 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 
 			# Asignamos a la variable "collection" una instancia de nuestra Colección
 			this.collection = new Authors()
-
-			
+			# traemos la colleccion desde el servidor		
 			this.collection.fetch()
-			# Desde la vista escuchamos cuando suceda el evento "add" en la colección y lanzamos la función addOne
-			#this.listenTo(this.collection, 'add', this.addOne)
-			# Desde la vista escuchamos cuando suceda el evento "remove" en la colección y lanzamos la función removeOne
-			#this.listenTo(this.collection, 'remove', this.removeOne)
+
+			this.listenTo(this.collection, 'add', this.addAuthor)
+			
 			return
 		,
 		# Función "render" de la vista
 		render: () ->
 			# Aqui renderizo la vista principal, la cargo con datos si deseo
-			console.log('render principal')
+			console.log('render de MainView');
 			return
 		,
 		# Cuando hubo un "add" en la colección ejecutamos esta función y recibimos como parametro el modelo afectado
-		addOne : (modelo) ->
-
+		addAuthor : (modelo) ->
+			#console.log(modelo);
 			# Creamos una instancia de una vista hija y le pasamos su modelo recientemente creado
-			#var view = new galleryRow({model : modelo, collection: this.collection})
+			view = new galleryRow({model : modelo, collection: this.collection})
 
 			# Appeneamos dentro de $('.dragger') el nuevo elemento que nos devuelve la función render de la vista hija
-			#this.$('.dragger').append( view.render().el )
+			this.$el.append( view.render().el )
 			return
 		,
 		# Cuando hubo un "remove" en la colección ejecutamos esta función y recibimos como parametro el modelo afectado

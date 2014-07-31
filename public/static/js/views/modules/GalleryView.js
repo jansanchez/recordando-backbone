@@ -8,11 +8,19 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow', 'models/
       _.bindAll(this, 'render');
       this.collection = new Authors();
       this.collection.fetch();
+      this.listenTo(this.collection, 'add', this.addAuthor);
     },
     render: function() {
-      console.log('render principal');
+      console.log('render de MainView');
     },
-    addOne: function(modelo) {},
+    addAuthor: function(modelo) {
+      var view;
+      view = new galleryRow({
+        model: modelo,
+        collection: this.collection
+      });
+      this.$el.append(view.render().el);
+    },
     removeOne: function(modelo) {
       modelo.destroy();
     }

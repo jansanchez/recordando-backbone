@@ -17,13 +17,15 @@ get '/authors' do
 	json = {}
 	$i = 1
 	$total = 13
+	array = []
 
 	begin
 		json[:"#$i"] = { :id => "#$i", :name => "name #$i", :photo => "#$i.jpg", :twitter => "@tuit#$i", :url => "https://www.google.com.pe/?q=#$i" }
+		array.push(json[:"#$i"])
 		$i +=1
 	end while $i < $total
 
-	json.to_json
+	array.to_json
 end
 
 # http://localhost:9494/img/1.jpg

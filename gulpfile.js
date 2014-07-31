@@ -22,6 +22,10 @@ var path = {
 		}
 	};
 
+gulp.task('js', ['coffee', 'lint', 'complexity'], function() {
+	console.log('todo js');
+});
+
 gulp.task('default', ['jade', 'coffee', 'lint', 'complexity', 'stylus'], function() {
 	console.log('aquí se deben ejecutar todas las tareas de gulp');
 });

@@ -11,6 +11,7 @@ define(['backbone', 'underscore'], function(Backbone, _) {
       _.bindAll(this, 'render', 'deleteAuthor');
       this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'destroy', this.remove);
+      console.log('initializa Row');
     },
     render: function() {
       var compiled_template;
