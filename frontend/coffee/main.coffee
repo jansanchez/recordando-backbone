@@ -1,7 +1,7 @@
 require.config({
-	baseUrl: 'public/js/',
+	baseUrl: 'static/js/',
 	paths: {
-		jquery: 'libs/jquery/jquery.min',
+		jquery: 'libs/jquery/dist/jquery.min',
 		underscore: 'libs/underscore/underscore',
 		backbone: 'libs/backbone/backbone',
 		text: 'libs/text/text'
@@ -16,7 +16,6 @@ require.config({
 		}
 	}
 })
-
 
 require(['jquery', 'underscore', 'backbone', 'text'], ($, _, Backbone, text) ->
 
