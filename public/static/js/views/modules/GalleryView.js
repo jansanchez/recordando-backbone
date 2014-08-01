@@ -11,9 +11,7 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow', 'models/
       this.listenTo(this.collection, 'add', this.addAuthor);
       this.listenTo(this.collection, 'remove', this.removeAuthor);
     },
-    render: function() {
-      console.log('render de MainView');
-    },
+    render: function() {},
     addAuthor: function(modelo) {
       var view;
       view = new galleryRow({

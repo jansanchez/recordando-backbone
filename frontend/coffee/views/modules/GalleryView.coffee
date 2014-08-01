@@ -12,19 +12,20 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 
 			# Asignamos a la variable "collection" una instancia de nuestra Colección
 			this.collection = new Authors()
-			# traemos la colleccion desde el servidor		
+
+			# Traemos la colleccion desde el servidor
 			this.collection.fetch()
 
+			# Ejecutamos la funcion 'addAuthor' cuando escuchamos el evento 'add' en la colección
 			this.listenTo(this.collection, 'add', this.addAuthor)
-
+			# Ejecutamos la funcion 'removeAuthor' cuando escuchamos el evento 'remove' en la colección
 			this.listenTo(this.collection, 'remove', this.removeAuthor)
 			
 			return
 		,
 		# Función "render" de la vista
 		render: () ->
-			# Aqui renderizo la vista principal, la cargo con datos si deseo
-			console.log('render de MainView');
+			# Aqui renderizo la vista principal, la cargo con datos si deseo, en este caso no la necesito
 			return
 		,
 		# Cuando hubo un "add" en la colección ejecutamos esta función y recibimos como parametro el modelo afectado

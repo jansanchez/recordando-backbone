@@ -26,4 +26,3 @@ define(['backbone'], (Backbone) ->
 
 	return Author
 )
-

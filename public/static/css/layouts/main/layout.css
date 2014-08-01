@@ -149,9 +149,6 @@
   margin: 0 auto 0px;
   padding-top: 0px;
 }
-* {
-  outline: 1px solid #f00;
-}
 @font-face {
   font-family: "OpenSans-Bold";
   font-style: normal;
