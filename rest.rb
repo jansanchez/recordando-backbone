@@ -15,6 +15,11 @@ before do
 end
 
 
+get "/" do
+  redirect '/index.html'
+end
+
+
 get '/authors' do
 	#content_type 'application/json'
 	$i = 1
@@ -32,18 +37,14 @@ get '/authors' do
 end
 
 
-
 delete "/authors/:id" do # curl -X DELETE http://localhost:9494/authors/5
 
 	array = []
 	json = {}
 
-	json = { :id => "#{params[:id]}", :status => "1" }
-	array.push(json)
-	
+	json = {:data => { :id => "#{params[:id]}" }, "msg" => "Eliminado correctamente", :status => "1"}
+	array.push(json)	
+
 	array.to_json
 end
-
-
-#options "/authors/:id" do
 
