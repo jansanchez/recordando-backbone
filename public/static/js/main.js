@@ -22,6 +22,6 @@ require(['jquery', 'underscore', 'backbone', 'text'], function($, _, Backbone, t
     interpolate: /\{\{(.+?)\}\}/g
   };
   return require(['static/js/views/modules/GalleryView.js'], function(GalleryView) {
-    return new GalleryView({});
+    return new GalleryView();
   });
 });

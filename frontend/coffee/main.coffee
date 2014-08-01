@@ -24,7 +24,7 @@ require(['jquery', 'underscore', 'backbone', 'text'], ($, _, Backbone, text) ->
 	require(['static/js/views/modules/GalleryView.js'],
 		(GalleryView) ->
 			#Creamos una instancia de nuestra galería principal
-			new GalleryView({})
+			new GalleryView()
 	)
 )
 

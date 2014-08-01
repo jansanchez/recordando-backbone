@@ -12,4 +12,3 @@ define(['backbone', 'models/Author'], (Backbone, Author) ->
 	return Authors
 
 )
-

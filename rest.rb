@@ -9,8 +9,11 @@ end
 before do
 	content_type :json
 	headers 'Access-Control-Allow-Origin' => '*', 
-			'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST', 'PUT', 'DELETE']
+			'Access-Control-Allow-Methods' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+			'Access-Control-Allow-Headers' => 'X-Requested-With, X-Prototype-Version',
+			'Access-Control-Max-Age' => '1728000'
 end
+
 
 get '/authors' do
 	#content_type 'application/json'
@@ -29,12 +32,18 @@ get '/authors' do
 end
 
 
-get '/authors/:id' do
+
+delete "/authors/:id" do # curl -X DELETE http://localhost:9494/authors/5
+
 	array = []
 	json = {}
 
-	json = { :head => "ok" }
+	json = { :id => "#{params[:id]}", :status => "1" }
 	array.push(json)
 	
-	json.to_json
+	array.to_json
 end
+
+
+#options "/authors/:id" do
+
