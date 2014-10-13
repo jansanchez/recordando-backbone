@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	changelog = require('conventional-changelog'),
 	bump = require('gulp-bump'),
+	tagVersion = require('gulp-tag-version'),
 	exec = require("child_process").exec,
 	fs = require('fs'),
 	package = require('./package.json');
@@ -109,5 +110,6 @@ gulp.task('log', function () {
 gulp.task('bump', function(){
 	gulp.src('./package.json')
 	.pipe(bump())
-	.pipe(gulp.dest('./'));
+	.pipe(gulp.dest('./'))
+	.pipe(tagVersion());
 });
