@@ -7,7 +7,9 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	complexity = require('gulp-complexity'),
 	browserSync = require('browser-sync'),
-	exec = require("child_process").exec;
+	exec = require("child_process").exec,
+	changelog = require('conventional-changelog'),
+	package = require('./package.json');
 
 var reload = browserSync.reload;
 
@@ -84,9 +86,20 @@ gulp.task('sinatra', function () {
 });
 
 gulp.task('server', ['sinatra'], function () {
-    return browserSync({
+	return browserSync({
 		proxy: 'localhost:9494',
 		open:  'localhost:9494',
 		//browser: ['google-chrome']
-    });
+	});
 });
+
+
+gulp.task('log', function () {
+	return changelog({
+		repository: package.repository.url,
+		version: package.version
+	}, function(err, log) {
+		console.log('Here is your changelog!', log);
+	});
+});
+
