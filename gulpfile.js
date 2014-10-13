@@ -5,7 +5,8 @@ var gulp = require('gulp'),
 	stylus = require('gulp-stylus'),
 	watch = require('gulp-watch'),
 	jshint = require('gulp-jshint'),
-	complexity = require('gulp-complexity');
+	complexity = require('gulp-complexity'),
+	exec = require("child_process").exec;
 
 var path = {
 		src: {
@@ -71,3 +72,11 @@ gulp.task('watch', function () {
 	gulp.watch(path.src.stylus, stylusTasks);
 });
 
+
+gulp.task('server', function () {
+	return exec('ruby rest.rb', function (error, stdout, stderr) {
+		console.log('Running in http://localhost:9494/');
+		console.log(stdout);
+		//callback(stdout.replace(/\n/gi, ''), error);
+	});
+});
