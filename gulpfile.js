@@ -6,7 +6,10 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	jshint = require('gulp-jshint'),
 	complexity = require('gulp-complexity'),
+	browserSync = require('browser-sync'),
 	exec = require("child_process").exec;
+
+var reload = browserSync.reload;
 
 var path = {
 		src: {
@@ -62,7 +65,7 @@ gulp.task('stylus', function () {
 		.pipe(gulp.dest(path.dest.stylus));
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', ['server'], function () {
 	var coffeeTasks = ['coffee', 'lint', 'complexity'],
 		jadeTasks = ['jade'],
 		stylusTasks = ['stylus'];
@@ -73,10 +76,17 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('server', function () {
+gulp.task('sinatra', function () {
 	return exec('ruby rest.rb', function (error, stdout, stderr) {
 		console.log('Running in http://localhost:9494/');
-		console.log(stdout);
-		//callback(stdout.replace(/\n/gi, ''), error);
+		callback(stdout, error);
 	});
+});
+
+gulp.task('server', ['sinatra'], function () {
+    return browserSync({
+		proxy: 'localhost:9494',
+		open:  'localhost:9494',
+		//browser: ['google-chrome']
+    });
 });
