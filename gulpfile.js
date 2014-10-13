@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	exec = require("child_process").exec,
 	changelog = require('conventional-changelog'),
+	fs = require('fs'),
 	package = require('./package.json');
 
 var reload = browserSync.reload;
@@ -99,7 +100,8 @@ gulp.task('log', function () {
 		repository: package.repository.url,
 		version: package.version
 	}, function(err, log) {
-		console.log('Here is your changelog!', log);
+		fs.writeFileSync('CHANGELOG.md', log, 'utf8');
+		//console.log('Here is your changelog!', log);
 	});
 });
 
