@@ -103,6 +103,7 @@ gulp.task('log', ['bump'], function () {
 		repository: package.repository.url,
 		version: package.version
 	}, function(err, log) {
+		//fs.appendFileSync('CHANGELOG.md', log, 'utf8');
 		fs.writeFileSync('CHANGELOG.md', log, 'utf8');
 		//console.log('Here is your changelog!', log);
 	});
