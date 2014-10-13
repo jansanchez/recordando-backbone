@@ -98,7 +98,7 @@ gulp.task('server', ['sinatra'], function () {
 });
 
 
-gulp.task('log', function () {
+gulp.task('log', ['bump'], function () {
 	return changelog({
 		repository: package.repository.url,
 		version: package.version
@@ -108,7 +108,7 @@ gulp.task('log', function () {
 	});
 });
 
-gulp.task('bump', ['log'], function(){
+gulp.task('bump', function(){
 	gulp.src(['./package.json', 'bower.json'])
 	.pipe(bump())
 	.pipe(gulp.dest('./'))
