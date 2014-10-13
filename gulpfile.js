@@ -85,7 +85,10 @@ gulp.task('watch', ['server'], function () {
 gulp.task('sinatra', function () {
 	return exec('ruby rest.rb', function (error, stdout, stderr) {
 		console.log('Running in http://localhost:9494/');
-		callback(stdout, error);
+		if (error) {
+			console.log(error);
+		};
+		//callback(stdout, error);
 	});
 });
 
