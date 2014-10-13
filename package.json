@@ -1,6 +1,6 @@
 {
   "name": "recordando-backbone",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Proyecto para recordar las buenas caracteristicas de Backbone Js",
   "main": "public/index.html",
   "scripts": {
