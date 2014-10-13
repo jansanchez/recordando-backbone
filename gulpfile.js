@@ -108,7 +108,7 @@ gulp.task('log', function () {
 	});
 });
 
-gulp.task('bump', function(){
+gulp.task('bump', ['log'], function(){
 	gulp.src(['./package.json', 'bower.json'])
 	.pipe(bump())
 	.pipe(gulp.dest('./'))
