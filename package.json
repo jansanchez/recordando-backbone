@@ -1,6 +1,6 @@
 {
   "name": "recordando-backbone",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Proyecto para recordar las buenas caracteristicas de Backbone Js",
   "main": "public/index.html",
   "scripts": {
@@ -24,6 +24,7 @@
     "browser-sync": "^1.5.8",
     "conventional-changelog": "0.0.11",
     "gulp": "^3.8.6",
+    "gulp-bump": "^0.1.11",
     "gulp-coffee": "^2.1.1",
     "gulp-complexity": "^0.2.1",
     "gulp-jade": "^0.7.0",

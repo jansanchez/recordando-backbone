@@ -7,8 +7,9 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	complexity = require('gulp-complexity'),
 	browserSync = require('browser-sync'),
-	exec = require("child_process").exec,
 	changelog = require('conventional-changelog'),
+	bump = require('gulp-bump'),
+	exec = require("child_process").exec,
 	fs = require('fs'),
 	package = require('./package.json');
 
@@ -105,3 +106,8 @@ gulp.task('log', function () {
 	});
 });
 
+gulp.task('bump', function(){
+	gulp.src('./package.json')
+	.pipe(bump())
+	.pipe(gulp.dest('./'));
+});
