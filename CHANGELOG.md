@@ -1,3 +1,12 @@
+### 0.0.9 (2014-10-14)
+
+
+#### Features
+
+* **GalleryRow:** Agregando la funcion 'editAuthor'. ([3fd1e4ce](git://github.com/jansanchez/recordando-backbone/commit/3fd1e4ce26090120dd342ddcce45fef3c6f8752f))
+* **rest:** Agregando la actualización de autores. ([0867106a](git://github.com/jansanchez/recordando-backbone/commit/0867106a3fd682bae4db884909eade86d0a9d90f))
+
+
 ### 0.0.8 (2014-10-13)
 
 
