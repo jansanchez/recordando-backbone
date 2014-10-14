@@ -128,3 +128,8 @@ gulp.task('bump', function(){
 	.pipe(tagVersion());
 });
 
+gulp.task('backup', function(){
+	gulp.src(['./public/json/authors-bk.json'])
+	.pipe(rename('authors.json'))
+	.pipe(gulp.dest('./public/json/'));
+});
