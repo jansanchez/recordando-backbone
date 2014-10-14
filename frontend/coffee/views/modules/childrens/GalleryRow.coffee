@@ -6,12 +6,18 @@ define(['backbone', 'underscore'], (Backbone, _) ->
 		collection: null,
 		tagName: "li",
 		events: {
-			"dbclick input" : "editAuthor",
-			"click .remove" : "deleteAuthor"
+			"dblclick input": "editAuthor",
+			"keypress input": "updateAuthor",
+			"click .remove": "deleteAuthor"
 		},
 		template : $('#tplAuthor').html(),
+		dom: {},
+		catchDom: () ->
+			this.dom.txtName = this.$el.find('input')
+			#console.log('catchDom')
+			return
 		initialize: () ->
-			_.bindAll(this, 'render', 'deleteAuthor')
+			_.bindAll(this, 'render', 'deleteAuthor', 'editAuthor', 'updateAuthor')
 
 			# Nos podemos a escuchar desde la vista hija actual cuando ocurra un evento "change" en el modelo y lanzamos la función "render" de la vista hija actual
 			this.listenTo(this.model, 'change', this.render)
@@ -30,6 +36,19 @@ define(['backbone', 'underscore'], (Backbone, _) ->
 		deleteAuthor: () ->
 			# Removemos el modelo seleccionado desde su colección correspondiente
 			this.collection.remove(this.model)
+			return
+		,
+		editAuthor: () ->
+			this.catchDom()
+			unless this.dom.txtName.hasClass('editable')
+				this.dom.txtName.addClass('editable')
+			return
+		,
+		updateAuthor: (evt) ->
+			if evt.keyCode is 13
+				this.catchDom()
+				this.model.setName(this.dom.txtName.val())
+				this.model.save()
 			return
 	})
 

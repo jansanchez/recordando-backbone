@@ -894,7 +894,8 @@ html[xmlns] .slides {
     right: 10px;
   }
 }
-@keyframes shake {
+
+	@keyframes shake {
 
 		0% {
 			transform: translate(3px, 0);

@@ -29,8 +29,15 @@ var path = {
 			jade: './public/',
 			coffee: './public/static/js/',
 			stylus: './public/static/css/'
+		},
+		watch : {
+			jade: ['frontend/jade/**/*.jade'],
+			stylus: ['frontend/stylus/**/*.styl'],
+			coffee: ['frontend/coffee/**/*.coffee']
 		}
+
 	};
+
 
 gulp.task('js', ['coffee', 'lint', 'complexity'], function() {
 	console.log('todo js');
@@ -76,9 +83,9 @@ gulp.task('watch', ['server'], function () {
 		jadeTasks = ['jade'],
 		stylusTasks = ['stylus'];
 
-	gulp.watch(path.src.coffee, coffeeTasks);
-	gulp.watch(path.src.jade, jadeTasks);
-	gulp.watch(path.src.stylus, stylusTasks);
+	gulp.watch(path.watch.coffee, coffeeTasks);
+	gulp.watch(path.watch.jade, jadeTasks);
+	gulp.watch(path.watch.stylus, stylusTasks);
 });
 
 

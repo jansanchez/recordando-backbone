@@ -5,12 +5,17 @@ define(['backbone', 'underscore'], function(Backbone, _) {
     collection: null,
     tagName: "li",
     events: {
-      "dbclick input": "editAuthor",
+      "dblclick input": "editAuthor",
+      "keypress input": "updateAuthor",
       "click .remove": "deleteAuthor"
     },
     template: $('#tplAuthor').html(),
+    dom: {},
+    catchDom: function() {
+      this.dom.txtName = this.$el.find('input');
+    },
     initialize: function() {
-      _.bindAll(this, 'render', 'deleteAuthor');
+      _.bindAll(this, 'render', 'deleteAuthor', 'editAuthor', 'updateAuthor');
       this.listenTo(this.model, 'change', this.render);
       this.listenTo(this.model, 'destroy', this.remove);
     },
@@ -22,6 +27,19 @@ define(['backbone', 'underscore'], function(Backbone, _) {
     },
     deleteAuthor: function() {
       this.collection.remove(this.model);
+    },
+    editAuthor: function() {
+      this.catchDom();
+      if (!this.dom.txtName.hasClass('editable')) {
+        this.dom.txtName.addClass('editable');
+      }
+    },
+    updateAuthor: function(evt) {
+      if (evt.keyCode === 13) {
+        this.catchDom();
+        this.model.setName(this.dom.txtName.val());
+        this.model.save();
+      }
     }
   });
   return galleryRow;

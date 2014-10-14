@@ -180,8 +180,8 @@ ul.authors li .data input {
   width: 99%;
 }
 ul.authors li .data input.editable {
-  background: #fff;
-  border: 2px inset;
+  background: #444;
+  color: #fff;
 }
 ul.authors li .options {
   position: absolute;
