@@ -11,6 +11,7 @@ var gulp = require('gulp'),
 	bump = require('gulp-bump'),
 	tagVersion = require('gulp-tag-version'),
 	filter = require('gulp-filter'),
+	rename = require('gulp-rename'),
 	exec = require("child_process").exec,
 	fs = require('fs'),
 	package = require('./package.json');
@@ -126,3 +127,4 @@ gulp.task('bump', function(){
 	.pipe(filter('package.json'))
 	.pipe(tagVersion());
 });
+

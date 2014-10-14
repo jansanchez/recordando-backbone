@@ -22,30 +22,72 @@ end
 
 get '/authors' do
 	#content_type 'application/json'
-	$i = 1
-	$total = 13
-	array = []
+	response = []
 	json = {}
 
-	begin
-		json[:"#$i"] = { :id => "#$i", :name => "name #$i", :photo => "#$i.jpg", :twitter => "@tuit#$i", :url => "https://www.google.com.pe/?q=#$i" }
-		array.push(json[:"#$i"])
-		$i +=1
-	end while $i < $total
+	file = File.read('public/json/authors.json')
+	response = JSON.parse(file)
 
-	array.to_json
+	response.to_json
 end
 
 
-delete "/authors/:id" do # curl -X DELETE http://localhost:9494/authors/5
+put "/authors/:id" do
 
 	array = []
+	newArray = []
+	response = []
+
 	json = {}
+	path = 'public/json/authors.json'
+
+	file = File.read(path)
+	array = JSON.parse(file)
+
+	req = JSON.parse(request.body.read)
+
+	array.each do |row|
+		if row["id"] == "#{params[:id]}"
+			row["name"] = "#{req['name']}"
+			newArray.push(row)
+		else
+			newArray.push(row)
+		end
+	end
+
+	File.write(path, newArray.to_json)
+
+	json = {:data => { :id => "#{params[:id]}" }, "msg" => "Actualizado correctamente", :status => "1"}
+	response.push(json)
+
+	response.to_json	
+end
+
+
+delete "/authors/:id" do
+
+	array = []
+	newArray = []
+	response = []
+
+	json = {}
+	path = 'public/json/authors.json'
+
+	file = File.read(path)
+	array = JSON.parse(file)
+	
+	array.each do |row|
+		if row["id"] == "#{params[:id]}"
+			puts "se eliminara"
+		else
+			newArray.push(row)
+		end
+	end
+
+	File.write(path, newArray.to_json)
 
 	json = {:data => { :id => "#{params[:id]}" }, "msg" => "Eliminado correctamente", :status => "1"}
-	array.push(json)	
+	response.push(json)
 
-	array.to_json
+	response.to_json
 end
-
-
