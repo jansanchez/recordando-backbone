@@ -2,10 +2,9 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow', 'models/
   var GalleryView;
   GalleryView = Backbone.View.extend({
     el: '.authors',
-    contador: 0,
     collection: null,
     initialize: function() {
-      _.bindAll(this, 'render');
+      _.bindAll(this, 'render', 'addAuthor');
       this.collection = new Authors();
       this.collection.fetch();
       this.listenTo(this.collection, 'add', this.addAuthor);

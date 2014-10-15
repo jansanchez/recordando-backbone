@@ -3,24 +3,23 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 
 	# Creamos la vista principal que contendrá nuestras vistas hijas
 	GalleryView = Backbone.View.extend({
-		el : '.authors',
-		contador : 0,
+		el: '.authors',
 		collection: null,
 		initialize: () ->
 			# _.bindAll(this) hace que las funciones apunten siempre al "this" del objeto principal
-			_.bindAll(this, 'render')
+			_.bindAll(this, 'render', 'addAuthor')
 
 			# Asignamos a la variable "collection" una instancia de nuestra Colección
 			this.collection = new Authors()
 
-			# Traemos la colleccion desde el servidor
+			# Traemos la collección desde el servidor, esto realizará un GET hacia la url de la colección
 			this.collection.fetch()
 
 			# Ejecutamos la funcion 'addAuthor' cuando escuchamos el evento 'add' en la colección
 			this.listenTo(this.collection, 'add', this.addAuthor)
 			# Ejecutamos la funcion 'removeAuthor' cuando escuchamos el evento 'remove' en la colección
 			this.listenTo(this.collection, 'remove', this.removeAuthor)
-			
+
 			return
 		,
 		# Función "render" de la vista
@@ -29,17 +28,17 @@ define(['backbone', 'underscore', 'views/modules/childrens/GalleryRow',  'models
 			return
 		,
 		# Cuando hubo un "add" en la colección ejecutamos esta función y recibimos como parametro el modelo afectado
-		addAuthor : (modelo) ->
+		addAuthor: (modelo) ->
 			#console.log(modelo);
 			# Creamos una instancia de una vista hija y le pasamos su modelo recientemente creado
 			view = new galleryRow({model : modelo, collection: this.collection})
 
-			# Appeneamos dentro de $('.dragger') el nuevo elemento que nos devuelve la función render de la vista hija
+			# Appeneamos dentro de $('.authors') el nuevo elemento que nos devuelve la función render de la vista hija
 			this.$el.append( view.render().el )
 			return
 		,
-		# Cuando hubo un "remove" en la colección ejecutamos esta función y recibimos como parametro el modelo afectado
-		removeAuthor : (modelo) ->
+		# Cuando hubo un "remove" en la colección ejecutamos esta función y recibimos como parámetro el modelo afectado
+		removeAuthor: (modelo) ->
 			# Destruimos el modelo
 			modelo.destroy()
 			return

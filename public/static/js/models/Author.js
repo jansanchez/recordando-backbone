@@ -10,7 +10,7 @@ define(['backbone'], function(Backbone) {
     },
     initialize: function() {
       this.on('change:name', function() {
-        return console.log('se cambio el name a: ' + this.get('name'));
+        console.log('se cambio el name a: ' + this.get('name'));
       });
     },
     setName: function(newName) {
