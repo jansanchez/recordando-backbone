@@ -192,3 +192,16 @@ ul.authors li .options img {
   height: 20px;
   width: 20px;
 }
+form.form_author {
+  background: none repeat scroll 0 0 #f4a460;
+  margin: 3% auto;
+  padding: 2%;
+  width: 30%;
+}
+.row {
+  margin: 0 0 1px;
+}
+.row label {
+  float: left;
+  width: 70px;
+}

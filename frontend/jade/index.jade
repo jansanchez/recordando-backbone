@@ -11,6 +11,26 @@ html
 		.box_center
 			ul.authors.js
 				-//for indice in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+		.box_center
+			form(class="form_author", id="frmAuthor", target="_self")
+				.row
+					label id:
+					input(name="id")
+				.row
+					label name:
+					input(name="name")
+				.row
+					label photo:
+					input(name="photo")
+				.row
+					label twitter:
+					input(name="twitter")
+				.row
+					label url:
+					input(name="url")
+				.row
+					label &nbsp;
+					input(type="button", id="btnSubmit", value="Add")
 
 		script(id="tplAuthor", type='text/template')
 			a(href="{{url}}", title="{{name}}", target="_blank")

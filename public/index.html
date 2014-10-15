@@ -14,6 +14,34 @@
       <ul class="authors js">
       </ul>
     </div>
+    <div class="box_center">
+      <form id="frmAuthor" target="_self" class="form_author">
+        <div class="row">
+          <label>id:</label>
+          <input name="id">
+        </div>
+        <div class="row">
+          <label>name:</label>
+          <input name="name">
+        </div>
+        <div class="row">
+          <label>photo:</label>
+          <input name="photo">
+        </div>
+        <div class="row">
+          <label>twitter:</label>
+          <input name="twitter">
+        </div>
+        <div class="row">
+          <label>url:</label>
+          <input name="url">
+        </div>
+        <div class="row">
+          <label>&nbsp;</label>
+          <input type="button" id="btnSubmit" value="Add">
+        </div>
+      </form>
+    </div>
     <script id="tplAuthor" type="text/template"><a href="{{url}}" title="{{name}}" target="_blank"><img border="0" src="http://localhost:9494/static/img/{{photo}}" alt="{{name}}"></a>
       <div class="data">
         <input type="text" placeholder="{{name}}" value="{{name}}">
