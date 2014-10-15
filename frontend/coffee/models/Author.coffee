@@ -14,6 +14,7 @@ define(['backbone'], (Backbone) ->
 			# Nos ponemos a escuchar el evento 'change:name' del modelo
 			this.on('change:name', () ->
 				console.log('se cambio el name a: ' + this.get('name'))
+				return
 			)
 			return
 		,

@@ -25,6 +25,8 @@ require(['jquery', 'underscore', 'backbone', 'text'], ($, _, Backbone, text) ->
 		(GalleryView) ->
 			#Creamos una instancia de nuestra galería principal
 			new GalleryView()
+			return
 	)
+	return
 )
 
