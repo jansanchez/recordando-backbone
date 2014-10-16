@@ -1,3 +1,13 @@
+### 0.0.10 (2014-10-16)
+
+
+#### Features
+
+* **GalleryView:** Agregando la funcionalidad de agregar mas autores.. ([6bfae672](git://github.com/jansanchez/recordando-backbone/commit/6bfae672f719cfebbeb98d789790f522803f59d0))
+* **html:** Agregando Formulario para agregar un nuevo autor. ([8bfcbd45](git://github.com/jansanchez/recordando-backbone/commit/8bfcbd4540285e8996c8fa919808c9bd524fb585))
+* **imagenes:** Agregando imagenes al proyecto. ([aa0c94c2](git://github.com/jansanchez/recordando-backbone/commit/aa0c94c218c4b9afa91689ac04070601f0b84716))
+
+
 ### 0.0.9 (2014-10-14)
 
 
