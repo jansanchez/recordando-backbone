@@ -12,6 +12,10 @@ sudo gem install sinatra
 ```
 
 ```
+bower install
+```
+
+```
 ruby rest.rb
 ```
 
