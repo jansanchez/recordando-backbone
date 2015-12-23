@@ -16,10 +16,15 @@ bower install
 ```
 
 ```
-ruby rest.rb
+gulp watch
 ```
-
 
 ```
 http://localhost:9494/index.html
+```
+
+y para restaurar el .json
+
+```
+gulp backup
 ```
